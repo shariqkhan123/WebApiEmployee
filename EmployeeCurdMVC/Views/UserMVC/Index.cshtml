@@ -1,0 +1,62 @@
+﻿@model IEnumerable<EmployeeCurdMVC.Models.EmpMVCModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Add")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpDesignation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpMobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmpPassword)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpDesignation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpMobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmpPassword)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id=item.EmpID}) |
+            @Html.ActionLink("Delete", "Delete", new {id=item.EmpID})
+        </td>
+    </tr>
+}
+
+</table>
